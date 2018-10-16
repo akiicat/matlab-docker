@@ -4,6 +4,11 @@ Matlab Version R2017a
 
 ## Get Images
 
+```shell
+git clone https://github.com/akiicat/matlab-docker.git
+cd matlab-docker
+```
+
 ### Build by yourself
 
 ```shell
@@ -11,6 +16,10 @@ git clone https://github.com/akiicat/matlab-docker.git
 cd matlab-docker
 docker build -t matlab-docker .
 ```
+
+### Build other version
+
+修改 `Dockerfile` 裡面的所有 *R2017a* 成你想要的[版本](https://ch.mathworks.com/products/compiler/matlab-runtime.html)，然後再從新 build 一次。
 
 ### Pull from Docker Hub
 
