@@ -1,0 +1,16 @@
+FROM ubuntu:16.04
+
+RUN mkdir /app
+WORKDIR /app
+
+ENV LD_LIBRARY_PATH=/usr/local/MATLAB/MATLAB_Runtime/v92/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v92/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v92/sys/os/glnxa64:
+ENV MCR_PATH=/usr/local/MATLAB/MATLAB_Runtime/v92
+CMD ["bash"]
+
+RUN apt-get update && \
+ apt-get install -qqy wget unzip x11-apps && \
+ wget http://ssd.mathworks.com/supportfiles/downloads/R2017a/deployment_files/R2017a/installers/glnxa64/MCR_R2017a_glnxa64_installer.zip && \
+ unzip MCR_R2017a_glnxa64_installer.zip && \
+ ./install -mode silent -agreeToLicense yes && \
+ rm -rf /app/*
+
