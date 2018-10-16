@@ -35,7 +35,7 @@ docker pull akiicat/matlab-docker
 
 ```shell
 cd helloworld
-chmod +x helloworld
+chmod +x hellotest
 export DOCKER_MCR_ROOT=/usr/local/MATLAB/MATLAB_Runtime/v92
 docker run --rm -it -v $(pwd):/app matlab-docker sh run_hellotest.sh $DOCKER_MCR_ROOT
 ```
@@ -55,7 +55,7 @@ hello world!
 
 ```shell
 cd helloworld
-chmod +x helloworld
+chmod +x hellotest
 export DOCKER_MCR_ROOT=/usr/local/MATLAB/MATLAB_Runtime/v92
 docker run --rm -it -v $(pwd):/app akiicat/matlab-docker sh run_hellotest.sh $DOCKER_MCR_ROOT
 ````
