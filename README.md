@@ -14,6 +14,10 @@ docker build -t matlab-docker .
 
 ### Pull from Docker Hub
 
+```shell
+docker pull akiicat/matlab-docker
+```
+
 ## Run Jobs
 
 ### Sample: Hello World
@@ -37,3 +41,12 @@ Setting up environment variables
 LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v92/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v92/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v92/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v92/sys/opengl/lib/glnxa64
 hello world!
 ```
+
+## Run Jobs from Docker Hub
+
+```shell
+cd helloworld
+chmod +x helloworld
+export DOCKER_MCR_ROOT=/usr/local/MATLAB/MATLAB_Runtime/v92
+docker run --rm -it -v $(pwd):/app akiicat/matlab-docker sh run_hellotest.sh $DOCKER_MCR_ROOT
+````
