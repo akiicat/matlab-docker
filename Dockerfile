@@ -5,7 +5,7 @@ WORKDIR /app
 
 ENV LD_LIBRARY_PATH=/usr/local/MATLAB/MATLAB_Runtime/v92/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v92/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v92/sys/os/glnxa64:
 ENV MCR_PATH=/usr/local/MATLAB/MATLAB_Runtime/v92
-CMD ["bash"]
+CMD ["sh", "run.sh", "/usr/local/MATLAB/MATLAB_Runtime/v92"]
 
 
 RUN apt-get update && \
