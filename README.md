@@ -95,9 +95,17 @@ gcloud docker -- push gcr.io/<your-gcp-project-id>/matlab:v1
 gcloud docker -- push gcr.io/sunlit-inquiry-164609/matlab:v1
 ```
 
+設定 Kubernets configuration
+
+```shell
+gcloud container clusters \
+    get-credentials <cluster-name> \
+    --zone <cluster-zone>
+```
+
 使用 Kubernetes 同時運行 Matlab Jobs
 
-- parallelism`：同時運行的 jobs 數
+- `parallelism`：同時運行的 jobs 數
 - `completions`：完成的 jobs 數
 - `image`：設定剛剛所使用 docker images
 
